@@ -1,0 +1,18 @@
+- hosts: web
+  become: true
+  tasks:
+    - name: clone repo
+      git:
+        repo: https://github.com/express42/reddit.git # адрес репозитория
+        dest: /opt/reddit
+        version: microservices_for_mc
+        force: true
+
+# - name: ui container
+#   import_playbook: ui2.yml
+
+- hosts: web
+  become: true
+  roles:
+    - ui
+    - comment

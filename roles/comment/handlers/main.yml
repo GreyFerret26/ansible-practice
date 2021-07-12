@@ -1,0 +1,8 @@
+---
+- name: reload reddit-comment
+  systemd:
+    enabled: true 
+    name: reddit-comment 
+    state: restarted 
+    daemon_reload: true
+
