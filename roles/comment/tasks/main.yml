@@ -5,10 +5,10 @@
     state: present
     update_cache: true
 
-- name: install ui dependencies
+- name: install comment dependencies
   bundler:
     state: present
-    gemfile: /opt/reddit/ui/Gemfile
+    gemfile: /opt/reddit/comment/Gemfile
 
 - name: add comment_config
   template:

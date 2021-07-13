@@ -3,10 +3,11 @@
   tasks:
     - name: clone repo
       git:
-        repo: https://github.com/express42/reddit.git # адрес репозитория
+        repo: https://github.com/GreyFerret26/test-prepreq-ansible.git
         dest: /opt/reddit
-        version: microservices_for_mc
+        version: main
         force: true
+  tags: pre
 
 # - name: ui container
 #   import_playbook: ui2.yml
@@ -15,4 +16,23 @@
   become: true
   roles:
     - ui
+  tags: ui
+
+- hosts: web
+  become: true
+  roles:
     - comment
+  tags: comment
+
+- hosts: web
+  become: true
+  roles:
+    - post
+  tags: post
+
+- hosts: web
+  become: true
+  roles:
+    - mongodb
+  tags: mongodb
+

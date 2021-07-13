@@ -1,0 +1,8 @@
+---
+- name: reload reddit-post
+  systemd:
+    enabled: true 
+    name: reddit-post 
+    state: restarted 
+    daemon_reload: true
+
